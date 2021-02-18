@@ -5,39 +5,57 @@
       <div class="mx-5 px-5">
         <input-text
           type="email"
-          :placeholder="'enter input value'"
-          :cssClass="'form-control'"
-          :labelName="'Email address:'"
-          :maxlength="50"
+          label="Email"
+          placeholder="abc@xyz.com"
+          v-model="emailId"
+          :disabled="false"
         ></input-text>
+        <!-- outside input {{ emailId }} -->
         <input-text
           type="password"
-          :placeholder="'enter password'"
-          :cssClass="'form-control'"
-          :labelName="'Password:'"
+          label="Password"
+          placeholder="123456"
+          v-model="password"
+          :disabled="false"
         ></input-text>
-        <button class="btn btn-primary px-5" @click="login">Login</button>
+        <date-picker v-model="date"></date-picker>
+        outside date: {{ date.day }}/{{ date.month }}/{{ date.year }}
+        <button class="btn btn-primary px-5 d-block" @click="login">
+          Login
+        </button>
       </div>
     </div>
   </div>
 </template>
 <script>
 import InputText from "../shared/input-text.vue";
+import DatePicker from "../shared/date-picker.vue";
 
 export default {
   data() {
     return {
-      email: "",
-      pwd: ""
+      emailId: "",
+      password: "",
+      date: {
+        day: null,
+        month: null,
+        year: null
+      }
     };
   },
   methods: {
     login() {
-      console.log(this.email, this.pwd);
+      console.log(
+        "email and password: ",
+        this.emailId,
+        this.password,
+        this.date
+      );
     }
   },
   components: {
-    InputText
+    InputText,
+    DatePicker
   }
 };
 </script>

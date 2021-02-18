@@ -7,21 +7,19 @@
           type="text"
           :placeholder="'enter username'"
           :cssClass="'form-control'"
-          :labelName="'UserName'"
-          :maxlength="50"
+          :label="'UserName'"
         ></input-text>
         <input-text
           type="email"
           :placeholder="'enter input value'"
           :cssClass="'form-control'"
-          :labelName="'Email address:'"
-          :maxlength="50"
+          :label="'Email address:'"
         ></input-text>
         <input-text
           type="password"
           :placeholder="'enter password'"
           :cssClass="'form-control'"
-          :labelName="'Password:'"
+          :label="'Password:'"
         ></input-text>
         <button class="btn btn-primary px-5" @click="signUp">SignUp</button>
       </div>

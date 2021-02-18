@@ -1,51 +1,40 @@
 <template>
   <div class="form-group">
-    <label for="">{{ labelName }}</label>
+    <label class="d-block" for="">{{ label }}</label>
     <input
-      ref="input_text"
+      ref="inputText"
       :type="type"
+      :value="value"
       :placeholder="placeholder"
-      :class="cssClass"
-      :maxlength="maxlength"
-      @change="updateValue($event.target.value)"
-      @blur="setValue($event.target.value)"
-      @keyup.enter="updateValue($event.target.value)"
+      :disabled="disabled"
+      @input="updateValue($event.target.value)"
     />
+    <!-- inside input {{ emailId }} -->
   </div>
 </template>
 <script>
 export default {
   props: {
-    labelName: {
-      type: String,
-      required: true,
-      default: ""
+    value: {
+      type: String
+    },
+    label: {
+      type: String
     },
     placeholder: {
-      type: String,
-      required: true,
-      default: ""
+      type: String
     },
     type: {
-      type: String,
-      required: true,
-      default: ""
+      type: String
     },
-    maxlength: {
-      type: Number
-    },
-    cssClass: {
-      type: String,
-      required: true,
-      default: ""
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
     updateValue(value) {
-      this.$emit("updateInput", this.removeSapace(value));
-    },
-    setValue(value) {
-      this.$refs.input_text.value = this.removeSapace(value);
+      this.$emit("input", value);
     },
     removeSapace(value) {
       value = value.replace(/\s\s+/g, " ");
