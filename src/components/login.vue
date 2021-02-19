@@ -10,7 +10,7 @@
           v-model="emailId"
           :disabled="false"
         ></input-text>
-        <!-- outside input {{ emailId }} -->
+        outside input {{ emailId }}
         <input-text
           type="password"
           label="Password"
@@ -18,8 +18,19 @@
           v-model="password"
           :disabled="false"
         ></input-text>
-        <date-picker v-model="date"></date-picker>
-        outside date: {{ date.day }}/{{ date.month }}/{{ date.year }}
+        <div>
+          <drop-down
+            label="dropdown"
+            v-model="selectOption"
+            :options="options"
+            @input="getValue"
+          ></drop-down>
+          outside selected value: {{ selectOption }}
+        </div>
+        <div>
+          <date-picker v-model="date"></date-picker>
+          outside date: {{ date.day }}/{{ date.month }}/{{ date.year }}
+        </div>
         <button class="btn btn-primary px-5 d-block" @click="login">
           Login
         </button>
@@ -30,6 +41,7 @@
 <script>
 import InputText from "../shared/input-text.vue";
 import DatePicker from "../shared/date-picker.vue";
+import DropDown from "../shared/drop-down.vue";
 
 export default {
   data() {
@@ -40,22 +52,33 @@ export default {
         day: null,
         month: null,
         year: null
-      }
+      },
+      options: [
+        { text: "aaa", value: "aaa" },
+        { text: "bbb", value: "bbb" },
+        { text: "ccc", value: "ccc" }
+      ],
+      selectOption: ""
     };
   },
   methods: {
+    getValue(val) {
+      console.log("getValue", val);
+    },
     login() {
       console.log(
         "email and password: ",
         this.emailId,
         this.password,
+        this.selectOption,
         this.date
       );
     }
   },
   components: {
     InputText,
-    DatePicker
+    DatePicker,
+    DropDown
   }
 };
 </script>
