@@ -22,7 +22,7 @@
           <drop-down
             label="dropdown"
             v-model="selectOption"
-            :options="options"
+            :options="fruitOptions"
             @input="getValue"
           ></drop-down>
           outside selected value: {{ selectOption }}
@@ -31,9 +31,38 @@
           <date-picker v-model="date"></date-picker>
           outside date: {{ date.day }}/{{ date.month }}/{{ date.year }}
         </div>
+        <div class="row">
+          <radio
+            v-for="(option, index) in genderOptions"
+            class="col-3"
+            name="radio_option_group"
+            :label="option.text"
+            :value="selectVal"
+            :index="index"
+            :key="index"
+            @change="changeValue"
+          ></radio>
+        </div>
+        <div>outside radio value: {{ selectVal }}</div>
+        <div class="row">
+          <checkbox
+            v-for="(option, index) in fruitOptions"
+            class="col-3"
+            :label="option.text"
+            :value="option.value"
+            :index="index"
+            :key="index"
+            @input="updateValue"
+          ></checkbox>
+        </div>
         <button class="btn btn-primary px-5 d-block" @click="login">
           Login
         </button>
+        <!-- <div>
+          <action-link destination="#" class="btn btn-default"
+            >Login</action-link
+          >
+        </div> -->
       </div>
     </div>
   </div>
@@ -42,6 +71,9 @@
 import InputText from "../shared/input-text.vue";
 import DatePicker from "../shared/date-picker.vue";
 import DropDown from "../shared/drop-down.vue";
+import ActionLink from "../shared/action-link.vue";
+import Radio from "../shared/radio.vue";
+import Checkbox from "../shared/checkbox.vue";
 
 export default {
   data() {
@@ -53,24 +85,43 @@ export default {
         month: null,
         year: null
       },
-      options: [
-        { text: "aaa", value: "aaa" },
-        { text: "bbb", value: "bbb" },
-        { text: "ccc", value: "ccc" }
+      fruitOptions: [
+        { text: "Apple", value: "Apple" },
+        { text: "Mango", value: "Mango" },
+        { text: "Orange", value: "Orange" }
       ],
-      selectOption: ""
+      genderOptions: [
+        { text: "Male", value: "Male" },
+        { text: "Female", value: "Female" },
+        { text: "Other", value: "Other" }
+      ],
+      selectOption: null,
+      selectVal: null
     };
   },
   methods: {
     getValue(val) {
       console.log("getValue", val);
+      this.selectOption = val;
+    },
+    changeValue(val) {
+      console.log("changeValue", val);
+      this.selectVal = val;
+    },
+    updateValue(val) {
+      console.log("outside ", val);
     },
     login() {
       console.log(
-        "email and password: ",
+        "emailId ",
         this.emailId,
+        "password: ",
         this.password,
+        "selectOption: ",
         this.selectOption,
+        "selectVal: ",
+        this.selectVal,
+        "date: ",
         this.date
       );
     }
@@ -78,7 +129,10 @@ export default {
   components: {
     InputText,
     DatePicker,
-    DropDown
+    DropDown,
+    ActionLink,
+    Radio,
+    Checkbox
   }
 };
 </script>
