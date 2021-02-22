@@ -1,10 +1,10 @@
 <template>
   <div class="navbar">
     <ul>
-      <li><router-link to="/login">Login</router-link></li>
+      <li><router-link to="/">Login</router-link></li>
       <li><router-link to="/signUp">SignUp</router-link></li>
       <li><router-link to="">UserName</router-link></li>
-      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/home">Home</router-link></li>
       <li><router-link to="/about">About</router-link></li>
       <li><router-link to="/contact">Contact</router-link></li>
     </ul>

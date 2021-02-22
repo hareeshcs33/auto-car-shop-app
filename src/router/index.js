@@ -12,7 +12,7 @@ export default new Router({
   mode: "history",
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: Home
     },
@@ -27,7 +27,7 @@ export default new Router({
       component: Contact
     },
     {
-      path: '/login',
+      path: '/',
       name: 'login',
       component: Login
     },

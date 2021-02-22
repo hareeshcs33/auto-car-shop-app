@@ -1,22 +1,28 @@
 <template>
   <div class="home">
     <h1>Home</h1>
+    <home-base></home-base>
   </div>
 </template>
 
 <script>
+import HomeBase from "../pages/home/home-base.vue";
+
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-    }
+  name: "home",
+  data() {
+    return {};
+  },
+  components: {
+    HomeBase
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
