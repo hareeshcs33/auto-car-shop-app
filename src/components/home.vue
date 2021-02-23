@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <home-base></home-base>
+    <!-- <home-base></home-base> -->
+    <admin></admin>
   </div>
 </template>
 
 <script>
 import HomeBase from "../pages/home/home-base.vue";
+import Admin from "../pages/admin/admin.vue";
 
 export default {
   name: "home",
@@ -14,7 +16,8 @@ export default {
     return {};
   },
   components: {
-    HomeBase
+    HomeBase,
+    Admin
   }
 };
 </script>

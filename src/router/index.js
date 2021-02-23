@@ -5,6 +5,10 @@ import About from '@/components/about'
 import Contact from '@/components/contact'
 import Login from '@/components/login'
 import SignUp from '@/components/signUp'
+import Admin from '../pages/admin/admin.vue';
+import EditItem from '../pages/admin/edit-item.vue';
+import ItemList from '../pages/admin/item-list.vue';
+
 
 Vue.use(Router)
 
@@ -35,6 +39,21 @@ export default new Router({
       path: '/signUp',
       name: 'signUp',
       component: SignUp
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin,
+      children: [
+        {
+          path: '/admin',
+          component: ItemList
+        },
+        {
+          path: '/admin/:id',
+          component: EditItem
+        },
+      ]
     }
   ]
 })
