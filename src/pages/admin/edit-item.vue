@@ -2,27 +2,74 @@
   <div class="mx-auto edit-item-block">
     <h2>Edit item: {{ $route.params.id }}</h2>
     <div class="edit-form">
-      <form v-if="editObj">
-        <input-text v-model="editObj.product"></input-text>
-        <input-text type="number" v-model="editObj.qty"></input-text>
-        <input-text type="number" v-model="editObj.price"></input-text>
-        <input-text type="number" v-model="editObj.discount"></input-text>
+      <form v-if="editObj" class="row">
+        <input-text
+          class="col-6"
+          label="Product"
+          placeholder="Product"
+          v-model="editObj.product"
+        ></input-text>
+        <input-text
+          class="col-6"
+          label="Quantity"
+          type="number"
+          placeholder="Quantity"
+          v-model="editObj.qty"
+        ></input-text>
+        <input-text
+          class="col-6"
+          label="Price"
+          type="number"
+          placeholder="Price"
+          v-model="editObj.price"
+        ></input-text>
+        <input-text
+          class="col-6"
+          label="Discount"
+          type="number"
+          placeholder="Discount"
+          v-model="editObj.discount"
+        ></input-text>
+        <drop-down
+          class="col-6"
+          label="color"
+          v-model="color"
+          :options="colors"
+          :value="colors"
+        ></drop-down>
+        {{ selectedColor }}
+        <div class="col-12">
+          <div class="d-flex">
+            <button class="btn btn-success col-6 mx-1" @click="editDone">
+              Save
+            </button>
+            <button class="btn btn-success col-6 mx-1" @click="editCancel">
+              Cancel
+            </button>
+          </div>
+        </div>
       </form>
-      <button class="btn btn-success" @click="editDone">Save</button>
-      <button class="btn btn-success" @click="editCancel">Cancel</button>
     </div>
   </div>
 </template>
 <script>
+import DropDown from "../../shared/drop-down.vue";
 import inputText from "../../shared/input-text.vue";
+import { colors } from "./colors";
+
 export default {
-  components: { inputText },
+  components: {
+    inputText,
+    DropDown
+  },
   props: {},
   data() {
     return {
       editObj: null,
       editValObj: null,
-      casheBeforeEdit: null
+      casheBeforeEdit: null,
+      color: "",
+      colors
     };
   },
   created() {
@@ -36,7 +83,8 @@ export default {
         product: this.editObj.product,
         qty: this.editObj.qty,
         price: this.editObj.price,
-        discount: this.editObj.discount
+        discount: this.editObj.discount,
+        color: this.editObj.color
       };
       localStorage.setItem("vfl-edit", JSON.stringify(this.editValObj));
       console.log("saved items", this.editValObj);
@@ -57,9 +105,9 @@ export default {
   flex-direction: column;
 }
 .edit-form {
-  max-width: 500px;
   width: 100%;
-  border: 1px solid #454545;
+  border: 1px solid #cac7c7;
   padding: 30px;
+  border-radius: 5px;
 }
 </style>

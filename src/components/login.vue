@@ -58,11 +58,6 @@
         <button class="btn btn-primary px-5 d-block" @click="login">
           Login
         </button>
-        <!-- <div>
-          <action-link destination="#" class="btn btn-default"
-            >Login</action-link
-          >
-        </div> -->
       </div>
     </div>
   </div>

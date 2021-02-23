@@ -11,6 +11,7 @@
         <li>discount: {{ item.discount }}</li>
         <li>coupon: {{ item.coupon }}</li>
         <li>Total Amount: {{ item.totalAmount }}</li>
+        <li>color: {{ item.color }}</li>
       </ul>
       <div class="cta-wrapper px-4">
         <button class="btn btn-info btn-sm px-3" @click="editItem(item)">

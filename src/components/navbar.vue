@@ -1,12 +1,19 @@
 <template>
   <div class="navbar">
-    <ul>
-      <li><router-link to="/">Login</router-link></li>
-      <li><router-link to="/signUp">SignUp</router-link></li>
+    <ul class="nav">
+      <router-link to="/home" tag="li" active-class="active"
+        ><a>Home</a></router-link
+      >
+      <router-link to="/" tag="li" active-class="active" exact
+        ><a>Login</a></router-link
+      >
+      <router-link to="/signUp" tag="li" active-class="active"
+        ><a>SignUp</a></router-link
+      >
       <li><router-link to="">UserName</router-link></li>
-      <li><router-link to="/home">Home</router-link></li>
-      <li><router-link to="/about">About</router-link></li>
-      <li><router-link to="/contact">Contact</router-link></li>
+      <router-link to="/admin" tag="li" active-class="active"
+        ><a>Admin</a></router-link
+      >
     </ul>
   </div>
 </template>
@@ -30,5 +37,9 @@
   text-decoration: none;
   display: inline-block;
   padding: 8px 12px;
+}
+.navbar ul li.active a {
+  color: blue;
+  font-weight: bold;
 }
 </style>
