@@ -51,7 +51,10 @@ export default new Router({
         },
         {
           path: '/admin/:id',
-          component: EditItem
+          component: EditItem,
+          props: (route) => ({
+              ...route.params
+          })
         },
       ]
     }
