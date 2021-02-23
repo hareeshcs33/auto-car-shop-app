@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
-import Login from '@/components/login'
-import SignUp from '@/components/signUp'
+import Login from '@/components/signUp'
+import LogIn from '@/components/LogIn'
 import Admin from '../pages/admin/admin.vue';
 import EditItem from '../pages/admin/edit-item.vue';
 import ItemList from '../pages/admin/item-list.vue';
@@ -19,13 +19,13 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'login',
+      name: 'signUp',
       component: Login
     },
     {
-      path: '/signUp',
-      name: 'signUp',
-      component: SignUp
+      path: '/LogIn',
+      name: 'LogIn',
+      component: LogIn
     },
     {
       path: '/admin',

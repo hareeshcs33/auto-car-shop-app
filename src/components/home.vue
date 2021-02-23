@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
-    <home-base></home-base>
+  <div class="container jumbotron">
+    <h3>Home</h3>
+    <!-- <home-base></home-base> -->
   </div>
 </template>
 

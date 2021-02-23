@@ -16,7 +16,7 @@
         >{{ option.text }}</option
       >
     </select>
-    <div>inside {{ value }}</div>
+    <!-- <div>inside {{ value }}</div> -->
   </div>
 </template>
 <script>

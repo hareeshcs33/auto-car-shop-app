@@ -33,11 +33,11 @@
         <drop-down
           class="col-6"
           label="color"
-          v-model="color"
+          v-model="editObj.color"
           :options="colors"
           :value="colors"
         ></drop-down>
-        {{ selectedColor }}
+        {{ editObj.color }}
         <div class="col-12">
           <div class="d-flex">
             <button class="btn btn-success col-6 mx-1" @click="editDone">
@@ -68,7 +68,6 @@ export default {
       editObj: null,
       editValObj: null,
       casheBeforeEdit: null,
-      color: "",
       colors
     };
   },

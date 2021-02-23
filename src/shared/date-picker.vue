@@ -1,5 +1,6 @@
 <template>
   <div class="form-group">
+    <div class="label">{{ label }}</div>
     <input
       type="text"
       placeholder="Day"
@@ -24,7 +25,7 @@
       @input="updateDate()"
       maxlength="4"
     />
-    inside date: {{ value.day }}/{{ value.month }}/{{ value.year }}
+    <!-- inside date: {{ value.day }}/{{ value.month }}/{{ value.year }} -->
   </div>
 </template>
 <script>
@@ -32,6 +33,9 @@ export default {
   props: {
     value: {
       type: Object
+    },
+    label: {
+      type: String
     }
   },
   methods: {

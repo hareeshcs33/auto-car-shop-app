@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <ul>
-      <!-- <li>{{ getUrls() }}</li> -->
-    </ul>
     <item
       v-for="(item, index) in items"
       :item="item"

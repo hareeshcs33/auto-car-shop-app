@@ -5,10 +5,10 @@
         ><a>Home</a></router-link
       >
       <router-link to="/" tag="li" active-class="active" exact
-        ><a>Login</a></router-link
-      >
-      <router-link to="/signUp" tag="li" active-class="active"
         ><a>SignUp</a></router-link
+      >
+      <router-link to="/LogIn" tag="li" active-class="active"
+        ><a>Login</a></router-link
       >
       <li><router-link to="">UserName</router-link></li>
       <router-link to="/admin" tag="li" active-class="active"

@@ -9,7 +9,7 @@
     />
     <label :for="name + '_' + index">{{ label }}</label>
     <ul>
-      <li v-for="checkbox in checkboxes" :key="checkbox">{{ checkbox }}</li>
+      <!-- <li v-for="checkbox in checkboxes" :key="checkbox">{{ checkbox }}</li> -->
     </ul>
   </div>
 </template>

@@ -9,7 +9,7 @@
       :disabled="isDisabled"
     />
     <label :for="name + '_' + index">{{ label }}</label>
-    <div>inside radio value: {{ radioButtonValue }}</div>
+    <!-- <div>inside radio value: {{ radioButtonValue }}</div> -->
   </div>
 </template>
 <script>

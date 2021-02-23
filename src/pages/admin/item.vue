@@ -1,23 +1,25 @@
 <template>
-  <div class="d-flex mb-5">
-    <div>
+  <div class="d-flex mb-5 item">
+    <div class="img-box">
       <img class="item-img" :src="'/static/img/' + item.src" />
     </div>
     <div>
-      <ul>
-        <li>Product: {{ item.product }}</li>
-        <li>Qty: {{ item.qty }}</li>
-        <li>Actual price: {{ item.price }}</li>
-        <li>discount: {{ item.discount }}</li>
-        <li>coupon: {{ item.coupon }}</li>
-        <li>Total Amount: {{ item.totalAmount }}</li>
-        <li>color: {{ item.color }}</li>
+      <ul class="row my-3">
+        <li class="col-12 col-sm-6 col-md-4">Product: {{ item.product }}</li>
+        <li class="col-12 col-sm-6 col-md-4">Qty: {{ item.qty }}</li>
+        <li class="col-12 col-sm-6 col-md-4">Price: {{ item.price }}</li>
+        <li class="col-12 col-sm-6 col-md-4">discount: {{ item.discount }}</li>
+        <li class="col-12 col-sm-6 col-md-4">coupon: {{ item.coupon }}</li>
+        <li class="col-12 col-sm-6 col-md-4">
+          Total Amount: {{ item.totalAmount }}
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">color: {{ item.color }}</li>
       </ul>
-      <div class="cta-wrapper px-4">
-        <button class="btn btn-info btn-sm px-3" @click="editItem(item)">
+      <div class="d-flex cta-wrapper px-4">
+        <button class="btn btn-info btn-sm px-4 mr-2" @click="editItem(item)">
           Edit
         </button>
-        <button class="btn btn-danger btn-sm px-3" @click="deleteItem(index)">
+        <button class="btn btn-danger btn-sm px-4" @click="deleteItem(index)">
           Delete
         </button>
       </div>
@@ -64,10 +66,32 @@ export default {
 };
 </script>
 <style scoped>
-.item-img {
+.img-box {
   background-color: gray;
+  min-width: 200px;
   width: 200px;
   height: 200px;
+  transition: 0.2s;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.item-img {
+  min-width: 200px;
+  width: 200px;
+  height: 200px;
+  transition: 0.4s;
+}
+.item-img:hover {
+  transform: scale(1.25);
+}
+ul {
+  list-style: square;
+}
+.jumbotron {
+  background-color: #d0e5fb !important;
+}
+.item {
+  border-bottom: 1px solid #454545;
 }
 .aura1 {
   background-image: url("../../assets/hyundai-aura-15203.jpg");

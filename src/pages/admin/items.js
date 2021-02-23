@@ -1,7 +1,7 @@
 export const items = [
   {
     "product": "Hyundai Aura",
-    "qty": 2,
+    "qty": 1,
     "price": "₹ 5.92 - 9.3 lakh",
     "discount": 50,
     "coupon": "applied",
@@ -23,6 +23,7 @@ export const items = [
   },
   {
     "product": "Hyundai Elantra",
+    "qty": 2,
     "price": "₹ 17.83 - 21.1 lakh",
     "color": "Red",
     "id": 3,
@@ -30,6 +31,7 @@ export const items = [
   },
   {
     "product": "Hyundai Grand i10 Nios",
+    "qty": 2,
     "price": "₹ 5.19 - 8.41 lakh",
     "color": "Red",
     "id": 4,
@@ -37,6 +39,7 @@ export const items = [
   },
   {
     "product": "Hyundai i20",
+    "qty": 2,
     "price": "₹ 6.8 - 11.33 lakh",
     "color": "Red",
     "id": 5,
@@ -44,6 +47,7 @@ export const items = [
   },
   {
     "product": "Hyundai Kona Electric",
+    "qty": 2,
     "price": "₹ 23.76 - 23.95 lakh",
     "color": "Red",
     "id": 6,
@@ -51,6 +55,7 @@ export const items = [
   },
   {
     "product": "Hyundai Santro",
+    "qty": 2,
     "price": "₹ 4.67 - 6.35 lakh",
     "color": "Red",
     "id": 7,
@@ -58,6 +63,7 @@ export const items = [
   },
   {
     "product": "Hyundai Tucson",
+    "qty": 2,
     "price": "₹ 22.55 - 27.33 lakh",
     "color": "Red",
     "id": 8,
@@ -65,6 +71,7 @@ export const items = [
   },
   {
     "product": "Hyundai Venue",
+    "qty": 1,
     "price": "₹ 6.87 - 11.67 lakh",
     "color": "Red",
     "id": 9,
@@ -72,6 +79,7 @@ export const items = [
   },
   {
     "product": "Hyundai Verna",
+    "qty": 1,
     "price": "₹ 9.11 - 15.2 lakh",
     "color": "Red",
     "id": 10,

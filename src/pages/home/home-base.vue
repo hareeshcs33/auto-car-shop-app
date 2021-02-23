@@ -25,7 +25,6 @@ export default {
 }
 .home-base > div:first-child {
   color: #000;
-  background: #cbcbf3;
   border: 1px solid #454545;
   min-width: 200px;
   max-width: 200px;
