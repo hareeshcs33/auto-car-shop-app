@@ -16,6 +16,9 @@ export default {
     // addAdmin() {
     //   this.$router.push("/admin");
     // }
+  },
+  mounted() {
+    console.log(this.$store.state.myName);
   }
 };
 </script>
