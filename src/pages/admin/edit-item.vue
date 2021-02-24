@@ -34,8 +34,8 @@
           class="col-6"
           label="color"
           v-model="editObj.color"
-          :options="colors"
-          :value="colors"
+          :options="getColors"
+          :value="getColors"
         ></drop-down>
         {{ editObj.color }}
         <div class="col-12">
@@ -55,7 +55,6 @@
 <script>
 import DropDown from "../../shared/drop-down.vue";
 import inputText from "../../shared/input-text.vue";
-import { colors } from "./colors";
 
 export default {
   components: {
@@ -67,14 +66,18 @@ export default {
     return {
       editObj: null,
       editValObj: null,
-      casheBeforeEdit: null,
-      colors
+      casheBeforeEdit: null
     };
   },
   created() {
     this.id = this.$route.params.id;
     this.editObj = JSON.parse(localStorage.getItem("vfl-edit"));
     this.casheBeforeEditObj = JSON.parse(JSON.stringify(this.editObj));
+  },
+  computed: {
+    getColors() {
+      return this.$store.state.colors;
+    }
   },
   methods: {
     editDone() {

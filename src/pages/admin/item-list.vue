@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <item
-      v-for="(item, index) in items"
+      v-for="(item, index) in getItems"
       :item="item"
       :index="index"
       :key="item.id"
@@ -13,17 +13,20 @@
 <script>
 import axios from "axios";
 import Item from "./item.vue";
-import { items } from "./items";
 
 export default {
   data() {
     return {
-      items,
       urls: null
     };
   },
   components: {
     Item
+  },
+  computed: {
+    getItems() {
+      return this.$store.state.items;
+    }
   },
   methods: {
     deleteItem(item) {
