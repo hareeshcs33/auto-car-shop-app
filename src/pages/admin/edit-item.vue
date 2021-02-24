@@ -66,7 +66,11 @@ export default {
     return {
       editObj: null,
       editValObj: null,
-      casheBeforeEdit: null
+      casheBeforeEdit: null,
+      coupon: null,
+      totalAmount: null,
+      src: null,
+      id: null
     };
   },
   created() {
@@ -86,10 +90,15 @@ export default {
         qty: this.editObj.qty,
         price: this.editObj.price,
         discount: this.editObj.discount,
-        color: this.editObj.color
+        color: this.editObj.color,
+        coupon: this.editObj.coupon,
+        totalAmount: this.editObj.totalAmount,
+        src: this.editObj.src,
+        id: this.editObj.id
       };
       localStorage.setItem("vfl-edit", JSON.stringify(this.editValObj));
       console.log("saved items", this.editValObj);
+      this.$store.commit("editDone", this.editValObj);
       this.$router.push("/admin");
     },
     editCancel() {
