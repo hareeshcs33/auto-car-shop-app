@@ -8,7 +8,8 @@ export const items = [
     "totalAmount": 400,
     "color": "Red",
     "id": 1,
-    "src": "hyundai-aura-15203.jpg"
+    "src": "hyundai-aura-15203.jpg",
+    "cart": false
   },
   {
     "product": "Hyundai Creta",

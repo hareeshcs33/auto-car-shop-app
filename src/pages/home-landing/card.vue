@@ -24,13 +24,24 @@
             </li>
             <li class="col-12 col-sm-6 col-md-4">color: {{ item.color }}</li>
           </ul>
-          <div class="d-flex cta-wrapper px-4">
-            <button
-              class="btn btn-info btn-md px-5 mr-2"
-              @click="addToCart(item)"
-            >
-              Add Cart
-            </button>
+          <div class="d-flex align-items-center cta-wrapper px-4">
+            <div class="d-flex">
+              <button
+                class="btn btn-info btn-md px-5 mr-2"
+                @click="addToCart(item)"
+                v-if="!item.cart"
+              >
+                Add Cart
+              </button>
+              <button
+                class="btn btn-info btn-md px-5 mr-2"
+                @click="removeFromCart(item)"
+                v-else
+              >
+                Remove Item From Cart
+              </button>
+            </div>
+            <p class="mb-0">{{ message }}</p>
           </div>
         </div>
       </div>
@@ -48,12 +59,43 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      message: ""
+    };
   },
   methods: {
     addToCart(item) {
+      item.cart = true;
       console.log(item);
+      this.addRemoveCartText();
+      this.$store.commit("addToCart", item);
+    },
+    removeFromCart(item) {
+      item.cart = false;
+      console.log(item);
+      this.addRemoveCartText();
+      this.$store.commit("removeFromCart", item);
+    },
+    addRemoveCartText() {
+      this.message = this.item.cart
+        ? "Added item from cart"
+        : "Removed item from cart";
+      setTimeout(() => {
+        this.message = "";
+      }, 3000);
+      return this.message;
     }
+  },
+  computed: {
+    // addRemoveCartText() {
+    //   this.message = this.item.cart
+    //     ? "Added item from cart"
+    //     : "Removed item from cart";
+    //   setTimeout(() => {
+    //     this.message = "";
+    //   }, 3000);
+    //   return this.message;
+    // }
   }
 };
 </script>

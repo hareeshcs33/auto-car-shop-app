@@ -14,6 +14,9 @@
       <router-link to="/admin" tag="li" active-class="active"
         ><a>Admin</a></router-link
       >
+      <router-link to="/cart" tag="li" active-class="active"
+        ><a>Cart</a></router-link
+      >
     </ul>
   </div>
 </template>
