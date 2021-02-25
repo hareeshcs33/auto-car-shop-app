@@ -65,7 +65,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
 .img-box {
   background-color: gray;
   min-width: 200px;
