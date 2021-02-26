@@ -109,16 +109,3 @@ export default {
   }
 };
 </script>
-<style scoped>
-.edit-item-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.edit-form {
-  width: 100%;
-  border: 1px solid #cac7c7;
-  padding: 30px;
-  border-radius: 5px;
-}
-</style>

@@ -28,3 +28,4 @@ body {
   background-image: url("./assets/body-bg.png");
 }
 </style>
+<style src="./css/common.css"></style>

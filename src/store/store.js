@@ -18,21 +18,9 @@ export const store = new Vuex.Store({
       console.log(state.items);
     },
     getCartCount(state) {
-      // let count = 0
-      // state.items.forEach(item => {
-      //   if (item.cart == true) {
-      //     count++;
-      //   }
-      //   console.log(count)
-      // })
       return state.cartItems.length;
     },
     getCartItems(state, payload) {
-      // state.items.filter(item => {
-      //   if (item.cart == true) {
-      //     state.cartItems.push(item);
-      //   }
-      // });
       return state.cartItems;
     }
   },
@@ -49,12 +37,13 @@ export const store = new Vuex.Store({
       console.log('edit item added to state item', state.items);
     },
     addToCart(state, payload) {
-      state.cartItems.push(payload);
-      // state.getCartItems(payload);
-      console.log(state.getCartCount);
+      const itemArr = state.items.filter(item => item.id == payload);
+      itemArr.forEach(item => {
+        state.cartItems.push(item);
+      });
     },
     removeFromCart(state, payload) {
-      // state.cartItems.filter(item => item.id == payload.id)
+      state.cartItems = state.cartItems.filter(item => item.id !== payload);
     }
   },
   actions: {

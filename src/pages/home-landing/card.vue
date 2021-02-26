@@ -68,13 +68,13 @@ export default {
       item.cart = true;
       console.log(item);
       this.addRemoveCartText();
-      this.$store.commit("addToCart", item);
+      this.$store.commit("addToCart", item.id);
     },
     removeFromCart(item) {
       item.cart = false;
       console.log(item);
       this.addRemoveCartText();
-      this.$store.commit("removeFromCart", item);
+      this.$store.commit("removeFromCart", item.id);
     },
     addRemoveCartText() {
       this.message = this.item.cart
@@ -85,17 +85,6 @@ export default {
       }, 3000);
       return this.message;
     }
-  },
-  computed: {
-    // addRemoveCartText() {
-    //   this.message = this.item.cart
-    //     ? "Added item from cart"
-    //     : "Removed item from cart";
-    //   setTimeout(() => {
-    //     this.message = "";
-    //   }, 3000);
-    //   return this.message;
-    // }
   }
 };
 </script>
