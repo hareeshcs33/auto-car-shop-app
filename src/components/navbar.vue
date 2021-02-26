@@ -1,5 +1,6 @@
 <template>
   <div class="navbar">
+    {{ getUserLogin }}
     <ul class="nav">
       <router-link to="/home" tag="li" active-class="active"
         ><a>Home</a></router-link
@@ -28,6 +29,9 @@ export default {
   computed: {
     getCartCount() {
       return this.$store.getters.getCartCount;
+    },
+    getUserLogin() {
+      return this.$store.state.userLogin;
     }
   }
 };

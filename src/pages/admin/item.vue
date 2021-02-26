@@ -3,7 +3,7 @@
     <div class="img-box">
       <img class="item-img" :src="'/static/img/' + item.src" />
     </div>
-    <div>
+    <div class="pl-5">
       <ul class="row my-3">
         <li class="col-12 col-sm-6 col-md-4">Product: {{ item.product }}</li>
         <li class="col-12 col-sm-6 col-md-4">Qty: {{ item.qty }}</li>
@@ -15,7 +15,7 @@
         </li>
         <li class="col-12 col-sm-6 col-md-4">color: {{ item.color }}</li>
       </ul>
-      <div class="d-flex cta-wrapper px-4">
+      <div class="d-flex cta-wrapper">
         <button class="btn btn-info btn-sm px-4 mr-2" @click="editItem(item)">
           Edit
         </button>

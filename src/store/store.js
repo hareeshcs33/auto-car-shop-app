@@ -12,6 +12,8 @@ export const store = new Vuex.Store({
     items: items,
     counter: 0,
     cartItems: [],
+    adminLogin: false,
+    userLogin: false,
   },
   getters: {
     filterItems(state) {

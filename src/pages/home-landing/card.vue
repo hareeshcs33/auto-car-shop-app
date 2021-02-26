@@ -8,7 +8,7 @@
         <div class="img-box">
           <img class="item-img" :src="'/static/img/' + item.src" />
         </div>
-        <div>
+        <div class="pl-5">
           <ul class="row my-1">
             <li class="col-12 col-sm-6 col-md-4">
               Product: {{ item.product }}
@@ -24,7 +24,7 @@
             </li>
             <li class="col-12 col-sm-6 col-md-4">color: {{ item.color }}</li>
           </ul>
-          <div class="d-flex align-items-center cta-wrapper px-4">
+          <div class="d-flex align-items-center cta-wrapper">
             <div class="d-flex">
               <button
                 class="btn btn-info btn-md px-5 mr-2"

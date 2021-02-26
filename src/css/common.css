@@ -1,7 +1,55 @@
-* {
-    box-sizing: border-box;
+/* start images */
+.aura1 {
+  background-image: url("../assets/hyundai-aura-15203.jpg");
 }
 
+.aura2 {
+  background-image: url("../assets/hyundai-creta-15490.jpg");
+}
+
+.aura3 {
+  background-image: url("../assets/hyundai-elantra-15111.jpg");
+}
+
+.aura4 {
+  background-image: url("../assets/hyundai-grand-i10-nios-14990.jpg");
+}
+
+.aura5 {
+  background-image: url("../assets/hyundai-i20-16085.jpg");
+}
+
+.aura6 {
+  background-image: url("../assets/hyundai-kona-electric-14934.jpg");
+}
+
+.aura7 {
+  background-image: url("../assets/hyundai-santro-14509.jpg");
+}
+
+.aura8 {
+  background-image: url("../assets/hyundai-venue-14865.jpg");
+}
+
+.aura9 {
+  background-image: url("../assets/hyundai-tucson-15706.jpg");
+}
+
+.aura10 {
+  background-image: url("../assets/hyundai-verna-15541.jpg");
+}
+/* end images */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
 
 .img-box {
   background-color: gray;
@@ -91,44 +139,4 @@ ul {
 
 .item {
   border-bottom: 1px solid #454545;
-}
-
-.aura1 {
-  background-image: url("../assets/hyundai-aura-15203.jpg");
-}
-
-.aura2 {
-  background-image: url("../assets/hyundai-creta-15490.jpg");
-}
-
-.aura3 {
-  background-image: url("../assets/hyundai-elantra-15111.jpg");
-}
-
-.aura4 {
-  background-image: url("../assets/hyundai-grand-i10-nios-14990.jpg");
-}
-
-.aura5 {
-  background-image: url("../assets/hyundai-i20-16085.jpg");
-}
-
-.aura6 {
-  background-image: url("../assets/hyundai-kona-electric-14934.jpg");
-}
-
-.aura7 {
-  background-image: url("../assets/hyundai-santro-14509.jpg");
-}
-
-.aura8 {
-  background-image: url("../assets/hyundai-venue-14865.jpg");
-}
-
-.aura9 {
-  background-image: url("../assets/hyundai-tucson-15706.jpg");
-}
-
-.aura10 {
-  background-image: url("../assets/hyundai-verna-15541.jpg");
 }

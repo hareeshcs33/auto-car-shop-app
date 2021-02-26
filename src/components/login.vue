@@ -8,12 +8,14 @@
           :placeholder="'enter input value'"
           :cssClass="'form-control'"
           :label="'Email address:'"
+          v-model="email"
         ></input-text>
         <input-text
           type="password"
           :placeholder="'enter password'"
           :cssClass="'form-control'"
           :label="'Password:'"
+          v-model="pwd"
         ></input-text>
         <button class="btn btn-primary px-5" @click="LogIn">LogIn</button>
       </div>
@@ -37,14 +39,20 @@ export default {
   },
   methods: {
     LogIn() {
-      if (true) {
+      if (this.validatedData()) {
         this.usersData.push({
-          username: this.username,
           email: this.email,
           pwd: this.pwd
         });
-        console.log(this.usersData);
+        this.$store.state.userLogin = true;
+        this.$router.push("/home");
       }
+    },
+    validatedData() {
+      if (this.email !== "" && this.pwd !== "") {
+        return true;
+      }
+      return false;
     }
   },
   components: {
