@@ -1,14 +1,14 @@
 <template>
   <div class="navbar">
-    {{ getUserLogin }}
+    <span>UserLogin: {{ getUserLogin }}</span>
     <ul class="nav">
       <router-link to="/home" tag="li" active-class="active"
         ><a>Home</a></router-link
       >
-      <router-link to="/" tag="li" active-class="active" exact
+      <router-link to="/signUp" tag="li" active-class="active" exact
         ><a>SignUp</a></router-link
       >
-      <router-link to="/LogIn" tag="li" active-class="active"
+      <router-link to="/" tag="li" active-class="active"
         ><a>Login</a></router-link
       >
       <li><router-link to="">User</router-link></li>

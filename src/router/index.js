@@ -30,12 +30,12 @@ export default new Router({
       component: Cart
     },
     {
-      path: '/',
+      path: '/signUp',
       name: 'signUp',
       component: Login
     },
     {
-      path: '/LogIn',
+      path: '/',
       name: 'LogIn',
       component: LogIn
     },
